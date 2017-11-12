@@ -1,0 +1,7 @@
+package am.alite.ga.ast
+
+class Expression {
+    fun convertFromInfix(input: String): String {
+	return "test "+input
+    }
+}
