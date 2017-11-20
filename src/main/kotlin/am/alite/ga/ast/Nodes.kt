@@ -1,16 +1,16 @@
 package am.alite.ga.ast
 
-sealed class node {
-    fun plus(other: node) = operatorNode('+', this, other)
-    fun minus(other: node) = operatorNode('-', this, other)
-    fun times(other: node) = operatorNode('*', this, other)
-    fun div(other: node) = operatorNode('/', this, other)
+sealed class Node {
+    fun plus(other: Node) = OperatorNode('+', this, other)
+    fun minus(other: Node) = OperatorNode('-', this, other)
+    fun times(other: Node) = OperatorNode('*', this, other)
+    fun div(other: Node) = OperatorNode('/', this, other)
 }
 
-class intNode(val value: Long):node()
-class floatNode(val value: Double):node()
-class operatorNode(val operator: Char, val left: node, val right: node):node()
-class varNode(val id: String):node()
-class functionNode(val functionName: Functions, val arg: node):node()
-class biFunctionNode(val functionName: Functions, val arg1: node, val arg2: node):node()
-class constantNode(val id: Constants):node()
+class IntNode(val value: Long) : Node()
+class FloatNode(val value: Double) : Node()
+class OperatorNode(val operator: Char, val left: Node, val right: Node) : Node()
+class VarNode(val id: String) : Node()
+class FunctionNode(val functionName: Functions, val arg: Node) : Node()
+class BiFunctionNode(val functionName: Functions, val arg1: Node, val arg2: Node) : Node()
+class ConstantNode(val id: Constants) : Node()
