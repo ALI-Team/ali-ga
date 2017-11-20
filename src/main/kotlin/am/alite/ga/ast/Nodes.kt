@@ -7,10 +7,10 @@ sealed class node {
     fun div(other: node) = operatorNode('/', this, other)
 }
 
-class intNode(val value: Long):node
-class floatNode(val value: Double):node
-class operatorNode(val operator: Char, val left: node, val right: node)
-class varNode(val id: String)
-class functionNode(val functionName: Functions, val arg: node)
-class biFunctionNode(val functionName: Functions, val arg1: node, val arg2: node)
-class constantNode(val id: Constants)
+class intNode(val value: Long):node()
+class floatNode(val value: Double):node()
+class operatorNode(val operator: Char, val left: node, val right: node):node()
+class varNode(val id: String):node()
+class functionNode(val functionName: Functions, val arg: node):node()
+class biFunctionNode(val functionName: Functions, val arg1: node, val arg2: node):node()
+class constantNode(val id: Constants):node()
