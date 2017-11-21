@@ -1,10 +1,10 @@
 package am.alite.ga.ast
 
 sealed class Node {
-    fun plus(other: Node) = OperatorNode('+', this, other)
-    fun minus(other: Node) = OperatorNode('-', this, other)
-    fun times(other: Node) = OperatorNode('*', this, other)
-    fun div(other: Node) = OperatorNode('/', this, other)
+    operator fun plus(other: Node) = OperatorNode('+', this, other)
+    operator fun minus(other: Node) = OperatorNode('-', this, other)
+    operator fun times(other: Node) = OperatorNode('*', this, other)
+    operator fun div(other: Node) = OperatorNode('/', this, other)
 }
 
 data class IntNode(val value: Long) : Node()
