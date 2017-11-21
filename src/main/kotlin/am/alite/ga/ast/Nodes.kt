@@ -5,6 +5,7 @@ sealed class Node {
     operator fun minus(other: Node) = OperatorNode('-', this, other)
     operator fun times(other: Node) = OperatorNode('*', this, other)
     operator fun div(other: Node) = OperatorNode('/', this, other)
+    infix fun pow(other: Node) = OperatorNode('^', this, other)
 }
 
 data class IntNode(val value: Long) : Node()
